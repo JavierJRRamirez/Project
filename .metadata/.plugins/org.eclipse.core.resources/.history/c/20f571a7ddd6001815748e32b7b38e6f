@@ -6,32 +6,40 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	private String cellPhone;
-	private String referenceNum;
+	private int referenceNum;
 	
 	public String getFirstName() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("First name: ");
+		firstName = input.nextLine();
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	public String getLastName() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Last name: ");
+		lastName = input.nextLine();
 		return lastName;
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 	public String getCellPhone() {
-
+		Scanner input = new Scanner(System.in);
+		System.out.println("Cell Phone: ");
+		cellPhone = input.nextLine();
 		return cellPhone;
 	}
 	public void setCellPhone(String cellPhone) {
 		this.cellPhone = cellPhone;
 	}
-	public String getReferenceNum() {
+	public int getReferenceNum() {
+		System.out.println("A" + Customer.reservationLookup());
 		return referenceNum;
 	}
-	public void setReferenceNum() {
-		String referenceNum = ("A" + Customer.reservationLookup());
+	public void setReferenceNum(int referenceNum) {
 		this.referenceNum = referenceNum;
 	}
 	

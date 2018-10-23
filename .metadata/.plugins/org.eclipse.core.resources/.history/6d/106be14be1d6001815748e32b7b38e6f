@@ -6,7 +6,7 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	private String cellPhone;
-	private String referenceNum;
+	private int referenceNum;
 	
 	public String getFirstName() {
 		return firstName;
@@ -27,11 +27,11 @@ public class Customer {
 	public void setCellPhone(String cellPhone) {
 		this.cellPhone = cellPhone;
 	}
-	public String getReferenceNum() {
+	public int getReferenceNum() {
 		return referenceNum;
 	}
-	public void setReferenceNum() {
-		String referenceNum = ("A" + Customer.reservationLookup());
+	public void setReferenceNum(int referenceNum) {
+		System.out.println("A" + Customer.reservationLookup());
 		this.referenceNum = referenceNum;
 	}
 	

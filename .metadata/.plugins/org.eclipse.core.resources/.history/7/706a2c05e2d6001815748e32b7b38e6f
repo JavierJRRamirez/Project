@@ -31,7 +31,7 @@ public class Customer {
 		return referenceNum;
 	}
 	public void setReferenceNum() {
-		String referenceNum = ("A" + Customer.reservationLookup());
+		referenceNum = ("A" + Customer.reservationLookup());
 		this.referenceNum = referenceNum;
 	}
 	

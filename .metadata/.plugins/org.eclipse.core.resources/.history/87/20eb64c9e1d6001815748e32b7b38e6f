@@ -30,8 +30,8 @@ public class Customer {
 	public String getReferenceNum() {
 		return referenceNum;
 	}
-	public void setReferenceNum() {
-		String referenceNum = ("A" + Customer.reservationLookup());
+	public void setReferenceNum(String referenceNum) {
+		referenceNum = ("A" + Customer.reservationLookup());
 		this.referenceNum = referenceNum;
 	}
 	
