@@ -1,0 +1,51 @@
+package com.csci4448.project.model;
+import java.util.*;
+
+public class Customer {
+	private String firstName;
+	private String lastName;
+	private String cellPhone;
+	private int referenceNum;
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getCellPhone() {
+		return cellPhone;
+	}
+	public void setCellPhone(String cellPhone) {
+		this.cellPhone = cellPhone;
+	}
+	public int getReferenceNum() {
+		return referenceNum;
+	}
+	public void setReferenceNum(int referenceNum) {
+		this.referenceNum = referenceNum;
+	}
+	
+	public void reservationLookup(int referenceNum){
+		String airLines = "ACFI";
+		String amerAir = "AA";
+		String canAir = "AC";
+		String fraAir = "AF";
+		String indAir = "AI";
+		String space = " ";
+		
+		Random random = new Random();
+		int ranLength = 1+random.nextInt(2);
+		for(int i = 0; i < ranLength; i++){
+			char c = (airLines).charAt(random.nextInt(5));
+			space+=c;
+		}
+		System.out.println("A" + space);
+	}
+}

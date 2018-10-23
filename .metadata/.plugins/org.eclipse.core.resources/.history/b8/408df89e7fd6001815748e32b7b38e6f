@@ -1,0 +1,38 @@
+package com.csci4448.project.view;
+import com.csci4448.project.model.Customer;
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+
+public class CustomerInfo {
+	enum UserType {
+		Admin, Customer;
+	}
+	
+	public static void main(String args[]) {
+		UserType userType;
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Admin: (Type 1)");
+		System.out.println("Customer (Type 2)");
+		int userInput = reader.nextInt();
+		reader.close();
+		
+		if (userInput == 1){
+			userType = UserType.Admin;
+			System.out.println("Check vacancy of a flight: (Type 1)");
+			System.out.println("Search for a client: (Type 2)");
+		}
+		else if (userInput == 2){
+				userType = UserType.Customer;
+				Scanner read = new Scanner(System.in);
+				
+				System.out.println("First name: ");
+				String firstName = read.nextLine(); 
+				//System.out.println("Last name: " + username);
+				//System.out.println("Cell Phone: " + username);
+				//String firstName = read.nextLine();
+				read.close();
+				System.out.println("A" + Customer.reservationLookup());
+		}
+	}
+}

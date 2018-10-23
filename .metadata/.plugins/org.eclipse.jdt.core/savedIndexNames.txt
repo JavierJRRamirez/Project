@@ -2,7 +2,6 @@ INDEX VERSION 1.129+/Users/javierramirez/Dropbox/my_dir/Object-Oriented design/P
 3525795770.index
 250251547.index
 3192905117.index
-506768708.index
 279910232.index
 2214973242.index
 3447711133.index
