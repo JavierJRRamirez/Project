@@ -1,0 +1,14 @@
+import java.util.*;
+class RandomSingleton
+{
+    public static int random(int i)
+    {
+        Random randnum = new Random(System.currentTimeMillis());
+        return randnum.nextInt(i);
+    }
+    public static void main(String[] args)
+    {  
+         for(int i=0; i<10; i++)
+            System.out.println(random(100));
+    }
+}

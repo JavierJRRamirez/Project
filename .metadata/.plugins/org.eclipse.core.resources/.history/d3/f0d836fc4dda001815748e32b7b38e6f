@@ -1,0 +1,14 @@
+package com.csci4448.project.view;
+import java.io.*;
+import java.util.*;
+
+public class FlightView {
+	
+//	public static String chosenFlight(){
+//		System.out.println("Choose from the available locations");
+//		Scanner reader = new Scanner(System.in);
+//		System.out.println("Start Location: ");
+//		String userInput = reader.nextLine();
+//		
+//	}
+}

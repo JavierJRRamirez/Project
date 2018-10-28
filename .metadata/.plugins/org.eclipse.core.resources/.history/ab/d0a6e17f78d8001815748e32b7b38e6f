@@ -1,0 +1,71 @@
+package com.csci4448.project.controller;
+import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.csci4448.project.model.Customer;
+
+public class Flight {
+	public LocalDate date;
+	public LocalDateTime startTime;
+	public LocalDateTime endTime;
+	public int duration;
+	public int flightNum;
+	private float cost;
+	private static List<Flight> flights;
+	
+//	private static List<Customer> customers;
+	
+//	public static List<Customer> hardCustomer(){
+//			customers = new ArrayList<Customer>();
+//		
+//			Customer customer1 = new Customer();
+//			customer1.setFirstName("Javier");
+//			customer1.setLastName("Ramirez");
+//			customer1.setCellPhone("719-715-253");
+//			customer1.setReferenceNum();
+//			customers.add(customer1);
+//		
+//			Customer customer2 = new Customer();
+//			customer2.setFirstName("Kyla");
+//			customer2.setLastName("Warner");
+//			customer2.setCellPhone("719-629-9328");
+//			customer1.setReferenceNum();
+//			customers.add(customer2);
+//		
+//			Customer customer3 = new Customer();
+//			customer3.setFirstName("john");
+//			customer3.setLastName("lawyer");
+//			customer3.setCellPhone("951-435-798");
+//			customer1.setReferenceNum();
+//			customers.add(customer3);
+//			
+//			Scanner read = new Scanner(System.in);
+//			String userInput1 = read.nextLine();
+//			Customer currentCustomer = null;
+//			for(Customer check1 : customers){
+//				if(check1.getFirstName().equals(userInput1)){
+//					currentCustomer = check1;
+//					break;
+//				}
+//			}
+//			if(currentCustomer == null){
+//				System.out.println("No user found");
+//				return null;
+//			}
+//			return customers;
+//	}
+	
+	static {
+		Flight flight = new Flight();
+		flights.add(flight);
+		System.out.println("242");
+	}
+	
+	public static List<Flight> pathFinder(LocalDate date, LocalDateTime startTime, LocalDateTime endTime, int duration, float cost){
+		
+	}
+
+}

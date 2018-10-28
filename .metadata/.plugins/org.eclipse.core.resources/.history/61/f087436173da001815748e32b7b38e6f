@@ -1,0 +1,8 @@
+package com.csci4448.project.view;
+
+public class AdminView {
+	public static void adminStart(){
+		System.out.println("Check vacancy of a flight: (Type 1)");
+		System.out.println("Search for a client: (Type 2)");
+	}
+}

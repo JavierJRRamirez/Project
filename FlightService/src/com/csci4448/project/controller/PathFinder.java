@@ -1,11 +1,12 @@
 package com.csci4448.project.controller;
 import com.csci4448.project.model.Customer;
+import com.csci4448.project.model.Flight;
 import com.csci4448.project.model.Location;
 import java.util.List;
 
 public class PathFinder{
-	public Location locationFrom;
-	public Location locationTo;
+	public String locationFrom;
+	public String locationTo;
 	public Customer customer;
 	public List<Flight> selectedFlights;
 	public static List<Location> availableLocation;
@@ -18,7 +19,9 @@ public class PathFinder{
 		availableLocation.add(new Location("Pueblo", 5));
 	}
 	
-	public Flight search(int from, int to, List<Flight> selectedFlights){
-		
-	}
+//	public Flight searchFlight(String locationFrom, String locationTo, 
+//			List<Flight> selectedFlights){
+//		
+//		return Flight;
+//	}
 }
