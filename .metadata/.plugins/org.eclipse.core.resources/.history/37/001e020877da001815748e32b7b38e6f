@@ -17,7 +17,7 @@ public class View {
 		System.out.println("Customer (Type 2)");
 	}
 	
-	public static void infoRecieved(){
+	public static void infoRecieved(){//main(String args[]) {
 		UserType userType;
 		Scanner reader = new Scanner(System.in);
 		Start();
