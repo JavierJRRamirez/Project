@@ -5,9 +5,23 @@ public class Flight {
 	public String startTime;
 	public String endTime;
 	public int duration;
-	public int flightNum;
+	public String flightNum;
+	public static int seatsAvailable;
+	public static int seatsTaken;
 	private double cost;
 	
+	public int getSeatsTaken() {
+		return seatsTaken;
+	}
+	public void setSeatsTaken(int seatsTaken) {
+		this.seatsTaken = seatsTaken;
+	}
+	public int getSeatsLeft() {
+		return seatsAvailable;
+	}
+	public void setSeatsAvailable(int seatsAvailable) {
+		this.seatsAvailable = seatsAvailable;
+	}
 	public String getDate() {
 		return date;
 	}
@@ -32,10 +46,10 @@ public class Flight {
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
-	public int getFlightNum() {
+	public String getFlightNum() {
 		return flightNum;
 	}
-	public void setFlightNum(int flightNum) {
+	public void setFlightNum(String flightNum) {
 		this.flightNum = flightNum;
 	}
 	public double getCost() {

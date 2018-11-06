@@ -1,0 +1,28 @@
+package com.csci4448.project.controller;
+
+import java.util.List;
+
+import com.csci4448.project.model.Customer;
+import com.csci4448.project.model.Flight;
+
+public class AdminController {	
+	public static int checkVacency(String flightNumber){
+		Flight currentAdmin = null;
+		for(Flight check1 : FlightController.pathFinder()){
+			if(check1.getFlightNum().equals(flightNumber)){
+				currentAdmin = check1;
+				int totalSeats = Flight.seatsAvailable - Flight.seatsTaken;
+				return totalSeats;
+			}
+		}
+		if(currentAdmin == null){
+			System.out.println("No flight found");
+			return 0;
+		}
+		return 0;
+	}
+	
+	public static void searchClient(String firstName){
+		
+	}
+}

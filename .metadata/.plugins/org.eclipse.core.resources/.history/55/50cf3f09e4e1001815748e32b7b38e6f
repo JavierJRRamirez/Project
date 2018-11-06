@@ -1,0 +1,27 @@
+package com.csci4448.project.view;
+import java.io.*;
+import java.util.*;
+
+import com.csci4448.project.controller.CustomerController;
+import com.csci4448.project.controller.FlightController;
+import com.csci4448.project.model.Customer;
+
+public class AdminView {
+	public static void adminStart(){
+		System.out.println("Check vacancy of a flight: (Type 1)");
+		System.out.println("Search for a client: (Type 2)");
+	}
+	
+	public static void adminSelect(){
+		Scanner reader = new Scanner(System.in);
+		adminStart();
+		
+		int userInput = 0;
+		if(userInput == 1){
+			Scanner read = new Scanner(System.in);
+			System.out.println("Enter flight number");
+			int userInput1 = read.nextInt();
+			Admin currentAdmin = FlightController.pathFinder(flightNumber);
+		}
+	}
+}
