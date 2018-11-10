@@ -6,17 +6,38 @@ public class Flight {
 	public String endTime;
 	public int duration;
 	public String flightNum;
-	public static int seatsAvailable;
-	public static int seatsTaken;
+	public int seatsAvailable;
+	public int seatsTaken;
 	private double cost;
+	String info;
+	int id;
 	
+	
+	public Flight(String startTime, String endTime, int duration, int seatsAvailable, int seatsTaken, String flightNum, double cost, int id) {
+		super();
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.duration = duration;
+		this.seatsAvailable = seatsAvailable;
+		this.seatsTaken = seatsTaken;
+		this.flightNum = flightNum;
+		this.cost = cost;
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getSeatsTaken() {
 		return seatsTaken;
 	}
 	public void setSeatsTaken(int seatsTaken) {
 		this.seatsTaken = seatsTaken;
 	}
-	public int getSeatsLeft() {
+	public int getSeatsAvailable() {
 		return seatsAvailable;
 	}
 	public void setSeatsAvailable(int seatsAvailable) {

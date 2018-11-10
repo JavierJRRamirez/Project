@@ -37,7 +37,14 @@ public class AdminView {
 			if(searchCustomer == null){
 				return;
 			}
-			System.out.println("Information display :)");
+			System.out.println("First name: " + searchCustomer.getFirstName());
+			System.out.println("Last name: " + searchCustomer.getLastName());
+			System.out.println("From: " + searchCustomer.getStartLoc());
+			System.out.println("To: " + searchCustomer.getEndLoc());
+			System.out.println("Start time: " + searchCustomer.getStartTime());
+			System.out.println("End time: " + searchCustomer.getEndTime());
+			System.out.println("Duaration: " + searchCustomer.getFlightDuration() + " Hours");
+			System.out.println("Cost of Flight: $" + searchCustomer.getCost());
 		}
 	}
 }

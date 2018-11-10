@@ -16,6 +16,12 @@ public class CustomerController {
 			customer1.setFirstName("Javier");
 			customer1.setLastName("Ramirez");
 			customer1.setCellPhone("719-715-253");
+			customer1.setStartLoc("Denver");
+			customer1.setEndLoc("Colorado Springs");
+			customer1.setStartTime("9:00am");
+			customer1.setEndTime("12:00pm");
+			customer1.setFlightDuration("3");
+			customer1.setCost((float) 80.00);
 			customer1.setReferenceNum();
 			customers.add(customer1);
 		
@@ -23,6 +29,12 @@ public class CustomerController {
 			customer2.setFirstName("Kyla");
 			customer2.setLastName("Warner");
 			customer2.setCellPhone("719-629-9328");
+			customer2.setStartLoc("Colorado Springs");
+			customer2.setEndLoc("Boulder");
+			customer2.setStartTime("5:00pm");
+			customer2.setEndTime("10:00pm");
+			customer2.setFlightDuration("5");
+			customer2.setCost((float) 125.00);
 			customer2.setReferenceNum();
 			customers.add(customer2);
 		
@@ -30,6 +42,12 @@ public class CustomerController {
 			customer3.setFirstName("John");
 			customer3.setLastName("Lawyer");
 			customer3.setCellPhone("951-435-798");
+			customer3.setStartLoc("Fort Collins");
+			customer3.setEndLoc("Pueblo");
+			customer3.setStartTime("2:00pm");
+			customer3.setEndTime("6:00pm");
+			customer3.setFlightDuration("4");
+			customer3.setCost((float) 184.60);
 			customer3.setReferenceNum();
 			customers.add(customer3);
 			

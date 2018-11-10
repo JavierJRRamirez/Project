@@ -2,16 +2,20 @@ package com.csci4448.project.controller;
 import com.csci4448.project.model.Customer;
 import com.csci4448.project.model.Flight;
 import com.csci4448.project.model.Location;
+import com.csci4448.project.view.FlightView;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class PathFinder{
-	public String locationFrom;
-	public String locationTo;
+	public Location locationFrom;
+	public Location locationTo;
 	public Customer customer;
-	public List<Flight> selectedFlights;
+	public static Flight selectedFlights; //was list of flights
 	public static List<Location> availableLocation;
 	
 	static {
+		availableLocation = new ArrayList<Location>();
 		availableLocation.add(new Location("Boulder", 1));
 		availableLocation.add(new Location("Fort Collins", 2));
 		availableLocation.add(new Location("Colorado Springs", 3));
@@ -19,9 +23,11 @@ public class PathFinder{
 		availableLocation.add(new Location("Pueblo", 5));
 	}
 	
-//	public Flight searchFlight(String locationFrom, String locationTo, 
-//			List<Flight> selectedFlights){
-//		
-//		return Flight;
-//	}
+	public static void searchFlight(){
+		FlightView.chosenFlight(availableLocation);
+		
+//		for(List<Location> checkPath : availableLocation){
+//			
+//		}
+	}
 }

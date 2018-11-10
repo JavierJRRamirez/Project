@@ -8,7 +8,7 @@ import com.csci4448.project.model.Flight;
 public class AdminController {	
 	public static int checkVacency(String flightNumber){
 		Flight currentSeats = null;
-		for(Flight check1 : FlightController.pathFinder()){
+		for(Flight check1 : FlightController.flightInfo()){
 			if(check1.getFlightNum().equals(flightNumber)){
 				currentSeats = check1;
 				int totalSeats = check1.seatsAvailable;
