@@ -15,7 +15,6 @@ public class FlightController {
 	}
 	static{
 		myFlight = new ArrayList<Flight>();
-		//
 		
 		myFlight.add(new Flight("5:00am", "6:00am", 1, 10, 90, "86", 95.12, 1));
 		myFlight.add(new Flight("8:00am", "10:00am", 2, 21, 79, "110", 120.55, 2));
@@ -23,6 +22,7 @@ public class FlightController {
 		myFlight.add(new Flight("2:00pm", "6:00pm", 4, 20, 80, "103", 185.90, 4));
 		myFlight.add(new Flight("7:00pm", "10:00pm", 3, 25, 75, "58", 124.76, 5));
 		myFlight.add(new Flight("11:00pm", "1:00am", 2, 48, 52, "2", 105.22, 6));
+		
 		
 //		Flight myFlight4 = new Flight();
 //		myFlight4.setDate("11-23-2018");

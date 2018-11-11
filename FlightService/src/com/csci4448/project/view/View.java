@@ -1,6 +1,7 @@
 package com.csci4448.project.view;
 import com.csci4448.project.controller.CustomerController;
 import com.csci4448.project.controller.PathFinder;
+import com.csci4448.project.controller.RandomGenerator;
 import com.csci4448.project.model.Customer;
 import com.csci4448.project.model.Flight;
 
@@ -42,9 +43,16 @@ public class View {
 			System.out.println("First name: " + currentCustomer.getFirstName());
 			System.out.println("Last name: " + currentCustomer.getLastName());
 			System.out.println("Cell phone: " + currentCustomer.getCellPhone());
+			List<Integer> LInt = new ArrayList<>();
+			for(int i = 0; i < 1; i++){
+				LInt.add(RandomGenerator.getRandomNumber(10).getMainRand());
+				}
+			for(int i : LInt){
+				System.out.print(i);
+			}
 			System.out.println("Reference number: " + currentCustomer.getReferenceNum());
+			
 			PathFinder.searchFlight();
-			// I would call the path finder
 			
 			reader.close();
 		}

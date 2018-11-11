@@ -1,0 +1,26 @@
+package com.csci4448.project.view;
+import java.util.*;
+
+import com.csci4448.project.model.Checkout;
+
+public class CheckoutView {
+	enum UserType {
+		Visa, MasterCard, Paypal, ApplePay;
+	}
+	public static void checkoutCust(List<Checkout> allCards){
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Select payment method: ");
+		System.out.println("Cards Available " + "Card Id");
+		for(Checkout myCard : allCards){
+			System.out.println(myCard.getCard() + "                  " + myCard.getId());
+		}
+		System.out.println("Enter card Id");
+		int userInput = reader.nextInt();
+		for(Checkout myCard : allCards){
+			if(userInput == myCard.getId()){
+				System.out.println("Selected: " + myCard.getCard());
+			}
+		}
+		System.out.println("Flight Booked!");
+	}
+}

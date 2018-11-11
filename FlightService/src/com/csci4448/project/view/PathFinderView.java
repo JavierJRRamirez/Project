@@ -3,6 +3,7 @@ package com.csci4448.project.view;
 import java.util.List;
 import java.util.Scanner;
 
+import com.csci4448.project.controller.CheckoutController;
 import com.csci4448.project.controller.FlightController;
 import com.csci4448.project.model.Flight;
 import com.csci4448.project.model.Location;
@@ -29,5 +30,6 @@ public class PathFinderView {
 				System.out.println("Selected: " + myFlight.getStartTime() + "     " + myFlight.getEndTime() + "    " + myFlight.getDuration() + " Hours" + "     " + myFlight.getSeatsAvailable() + "                " +  myFlight.getFlightNum() + "           " + "$" + myFlight.getCost());
 			}
 		}
+		CheckoutController.searchCard();
 	}
 }

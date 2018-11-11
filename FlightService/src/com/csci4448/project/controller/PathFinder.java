@@ -25,9 +25,5 @@ public class PathFinder{
 	
 	public static void searchFlight(){
 		FlightView.chosenFlight(availableLocation);
-		
-//		for(List<Location> checkPath : availableLocation){
-//			
-//		}
 	}
 }

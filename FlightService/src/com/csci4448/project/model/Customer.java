@@ -79,7 +79,27 @@ public class Customer {
 		this.referenceNum = referenceNum;
 	}
 	
+//	private static Customer instance = null;
+//	public static Random randNum = null;
+//	
+//	private Customer(int i) {
+//		randNum = new Random(i);
+//	}
+//	
+//	public static Customer getRandomNumber(int i){
+//		if(instance == null){
+//			instance = new Customer(i);
+//		}
+//		return instance;
+//	}
+//	
+//	public static int getMainRand(){
+//		return randNum.nextInt(4) + 1;
+//	}
+	
 	public static String reservationLookup(){
+//		List<Integer> LInt = new ArrayList<>();
+		
 		String airLines = "ACFI";
 		String airNum = "0123456789";
 		String numFlight = "";
@@ -91,6 +111,11 @@ public class Customer {
 			char c = (airLines).charAt(random.nextInt(4));
 			airAbrev+=c;
 		}
+		
+//		for(int k = 0; k < 10; k++){
+//			LInt.add(getRandomNumber(10).getMainRand());
+//		}
+		
 		int numLength = 2+random.nextInt(1);
 		for(int k = 0; k < numLength; k++){
 			char c = (airNum).charAt(random.nextInt(10));
