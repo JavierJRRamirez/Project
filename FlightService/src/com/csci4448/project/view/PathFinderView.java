@@ -24,10 +24,11 @@ public class PathFinderView {
 		System.out.println("Select:");
 		int userInput2 = reader.nextInt();
 		
-		System.out.println("          Start Time " + "End Time " + "Duration    " + "Seats Available " +"Flight Number   " + "Cost ");
+		System.out.println("          Start Time " + "End Time " + "Duration    " + "Seats Available " +"Flight Number     " + "Cost      " + "Date");
+		//int goFlight = FlightController.seatCalc();
 		for(Flight myFlight : allFlights){
 			if(userInput2 == myFlight.getId()) {
-				System.out.println("Selected: " + myFlight.getStartTime() + "     " + myFlight.getEndTime() + "    " + myFlight.getDuration() + " Hours" + "     " + myFlight.getSeatsAvailable() + "                " +  myFlight.getFlightNum() + "           " + "$" + myFlight.getCost());
+				System.out.println("Selected: " + myFlight.getStartTime() + "     " + myFlight.getEndTime() + "    " + myFlight.getDuration() + " Hours" + "     " + /*goFlight*/myFlight.getSeatsAvailable() + "                " +  myFlight.getFlightNum() + "           " + "$" + myFlight.getCost() + "  " + userInput1);
 			}
 		}
 		CheckoutController.searchCard();

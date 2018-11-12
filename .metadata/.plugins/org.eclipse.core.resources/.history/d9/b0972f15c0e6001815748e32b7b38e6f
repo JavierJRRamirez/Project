@@ -1,0 +1,12 @@
+package com.csci4448.project.controller;
+
+public class MementoController {
+	private String flightState;
+	
+	public void Memento(String flightToSave){
+		flightState = flightToSave;
+	}
+	public String getSavedTime(){
+		return flightState;
+	}
+}

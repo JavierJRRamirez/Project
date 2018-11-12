@@ -1,10 +1,17 @@
 package com.csci4448.project.view;
 import java.util.*;
 
+import com.csci4448.project.controller.CheckoutController;
 import com.csci4448.project.controller.CustomerController;
+import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.model.Checkout;
+import com.csci4448.project.model.Memento;
 
 public class CheckoutView {
+	
+	static Memento mementoPicked = new Memento();
+	MementoSaveState mementoSave = new MementoSaveState();
+	
 	enum UserType {
 		Visa, MasterCard, Paypal, ApplePay;
 	}
@@ -22,15 +29,18 @@ public class CheckoutView {
 				System.out.println("Selected: " + myCard.getCard());
 			}
 		}
+		
 		System.out.println("Agree to pay amount: Yes (Type 1) No (Type 2)");
 		int userInput2 = reader.nextInt();
 		if(userInput2 == 1){
 			System.out.println("Flight Booked!");
 		}
+		
 		if(userInput2 == 2){
 			System.out.println("Flight cancelled :(");
 			System.out.println(" ");
-			CustomerController.runAllDay();
+			MementoSaveState.add(mementoPicked.saveStateToMemento());
+			CheckoutController.searchCard();
 		}
 	}
 }

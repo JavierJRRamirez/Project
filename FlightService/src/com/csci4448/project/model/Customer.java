@@ -12,9 +12,15 @@ public class Customer {
 	private String startTime;
 	private String endTime;
 	private String flightDuration;
+	private String flightNumber;
 	private float cost;
 	
-	
+	public String getFlightNumber() {
+		return flightNumber;
+	}
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
+	}
 	public String getStartLoc() {
 		return startLoc;
 	}

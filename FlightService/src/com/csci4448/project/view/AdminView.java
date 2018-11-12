@@ -28,6 +28,7 @@ public class AdminView {
 			}
 			System.out.println("Vacant seat for Flight number: " + flightNumber);
 			System.out.println("Amount of vacant seats: " + currentSeats);
+			read.close();
 		}
 		if(userInput == 2){
 			Scanner read = new Scanner(System.in);
@@ -44,7 +45,10 @@ public class AdminView {
 			System.out.println("Start time: " + searchCustomer.getStartTime());
 			System.out.println("End time: " + searchCustomer.getEndTime());
 			System.out.println("Duaration: " + searchCustomer.getFlightDuration() + " Hours");
+			System.out.println("Flight number: " + searchCustomer.getFlightNumber());
 			System.out.println("Cost of Flight: $" + searchCustomer.getCost());
+			read.close();
 		}
+		reader.close();
 	}
 }

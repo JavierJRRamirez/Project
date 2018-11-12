@@ -96,6 +96,20 @@ public class FlightController {
 	public static void flightRun(){
 		PathFinder.searchFlight();
 	}
+	//
+//	public int seatCalc(){
+//		Flight currentAvail = null;
+//		String calcAvailable = null;
+//		for(Flight check: flightInfo()){
+//			if(check.getFlightNum().equals(calcAvailable)){
+//				currentAvail = check;
+//				int totalAvailable = check.seatsAvailable - 1;
+//				return totalAvailable;
+//			}
+//		}
+//		return 0;
+//	}
+	//
 	
 	public static Flight checkFlight(){
 		PathFinderView.dayOfFlight(myFlight);
