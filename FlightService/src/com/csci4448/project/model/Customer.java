@@ -1,5 +1,4 @@
 package com.csci4448.project.model;
-import java.util.Scanner;
 import java.util.*;
 
 public class Customer {

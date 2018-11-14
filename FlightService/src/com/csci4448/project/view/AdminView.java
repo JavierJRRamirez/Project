@@ -1,17 +1,21 @@
 package com.csci4448.project.view;
-import java.io.*;
 import java.util.*;
 
 import com.csci4448.project.controller.AdminController;
 import com.csci4448.project.controller.CustomerController;
-import com.csci4448.project.controller.FlightController;
+import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.model.Customer;
-import com.csci4448.project.model.Flight;
+import com.csci4448.project.model.MementoState;
 
 public class AdminView {
+	
+	static MementoState mementoPicked = new MementoState();
+	static MementoSaveState mementoSave = new MementoSaveState();
+	
 	public static void adminStart(){
 		System.out.println("Check vacancy of a flight: (Type 1)");
 		System.out.println("Search for a client: (Type 2)");
+		System.out.println("Back to start: (Type 3)");
 		adminSelect();
 	}
 	
@@ -20,7 +24,7 @@ public class AdminView {
 		int userInput = reader.nextInt();
 		if(userInput == 1){
 			Scanner read = new Scanner(System.in);
-			System.out.println("Enter flight number");
+			System.out.println("Enter flight number: '2' or '58' or '86' or '103' or '110' or '242");
 			String flightNumber = read.nextLine();
 			int currentSeats = AdminController.checkVacency(flightNumber);
 			if(currentSeats == 0){
@@ -28,11 +32,17 @@ public class AdminView {
 			}
 			System.out.println("Vacant seat for Flight number: " + flightNumber);
 			System.out.println("Amount of vacant seats: " + currentSeats);
+			System.out.println(" ");
+			mementoPicked.setState(flightNumber);
+			mementoSave.add(mementoPicked.saveStateToMemento());
+			mementoPicked.getStateFromMemento(mementoSave.get(0));
+			System.out.println("Option picked last time: " + mementoPicked.getState());
+			adminStart();
 			read.close();
 		}
 		if(userInput == 2){
 			Scanner read = new Scanner(System.in);
-			System.out.println("Enter client name: ");
+			System.out.println("Enter client name: 'Javier' or 'Kyla' or 'John'");
 			String clientName = read.nextLine();
 			Customer searchCustomer = AdminController.searchClient(clientName);
 			if(searchCustomer == null){
@@ -47,7 +57,24 @@ public class AdminView {
 			System.out.println("Duaration: " + searchCustomer.getFlightDuration() + " Hours");
 			System.out.println("Flight number: " + searchCustomer.getFlightNumber());
 			System.out.println("Cost of Flight: $" + searchCustomer.getCost());
+			
+			System.out.println(" ");
+			mementoPicked.setState(String.valueOf(clientName));
+			mementoSave.add(mementoPicked.saveStateToMemento());
+			mementoPicked.getStateFromMemento(mementoSave.get(0));
+			System.out.println("Option picked last time: " + mementoPicked.getState());
+			System.out.println(" ");
+			adminStart();
 			read.close();
+		}
+		if(userInput == 3){
+			System.out.println(" ");
+			CustomerController.runAllDay();
+		}
+		else {
+			System.out.println("Choice not possble, enter valid number");
+			System.out.println(" ");
+			adminStart();
 		}
 		reader.close();
 	}

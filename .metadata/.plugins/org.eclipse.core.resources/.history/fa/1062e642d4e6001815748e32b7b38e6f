@@ -1,0 +1,20 @@
+package com.csci4448.project.model;
+
+import com.csci4448.project.controller.MementoController;
+
+public class Memento {
+	private int flightState;
+	
+	public void setState(int flightState){
+		this.flightState = flightState;
+	}
+	public int getState(){
+		return flightState;
+	}
+	public MementoController saveStateToMemento(){
+		return new MementoController(flightState);
+	}
+	public void getStateFromMemento(MementoController memento){
+		flightState = memento.getState();
+	}
+}

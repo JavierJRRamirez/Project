@@ -1,0 +1,59 @@
+package com.csci4448.project.view;
+import java.util.*;
+
+import com.csci4448.project.Driver;
+import com.csci4448.project.controller.CheckoutController;
+import com.csci4448.project.controller.CustomerController;
+import com.csci4448.project.controller.FlightController;
+import com.csci4448.project.controller.MementoSaveState;
+import com.csci4448.project.controller.PathFinder;
+import com.csci4448.project.model.Checkout;
+import com.csci4448.project.model.MementoState;
+
+public class CheckoutView {
+	
+	static MementoState mementoPicked = new MementoState();
+	static MementoSaveState mementoSave = new MementoSaveState();
+	
+	enum UserType {
+		Visa, MasterCard, Paypal, ApplePay;
+	}
+	public static void checkoutCust(List<Checkout> allCards){
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Select payment method: ");
+		System.out.println("Cards Available " + "Card Id");
+		for(Checkout myCard : allCards){
+			System.out.println(myCard.getCard() + "                  " + myCard.getId());
+		}
+		System.out.println("Enter card Id: ");
+		int userInput = reader.nextInt();
+		for(Checkout myCard : allCards){
+			if(userInput == myCard.getId()){
+				System.out.println("Selected: " + myCard.getCard());
+			}
+		}
+		
+		System.out.println("Agree to pay amount: Yes (Type 1) No (Type 2)");
+		int userInput2 = reader.nextInt();
+		if(userInput2 == 1){
+			System.out.println("Flight Booked!");
+			System.out.println(" ");
+			CustomerController.runAllDay();
+		}
+		
+		if(userInput2 == 2){
+			System.out.println("Flight cancelled :(");
+			System.out.println(" ");
+			mementoPicked.setState(String.valueOf(userInput));
+			mementoSave.add(mementoPicked.saveStateToMemento());
+			mementoPicked.getStateFromMemento(mementoSave.get(0));
+			System.out.println("Option picked last time: " + mementoPicked.getState());
+			CheckoutController.searchCard();
+		}
+		else {
+			System.out.println("Choice not possble, enter valid number");
+			System.out.println(" ");
+			CheckoutController.searchCard();
+		}
+	}
+}

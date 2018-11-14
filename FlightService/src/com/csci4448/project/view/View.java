@@ -1,13 +1,16 @@
 package com.csci4448.project.view;
 import com.csci4448.project.controller.CustomerController;
+import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.controller.PathFinder;
 import com.csci4448.project.model.Customer;
-import com.csci4448.project.model.Flight;
+import com.csci4448.project.model.MementoState;
 
-import java.io.*;
 import java.util.*;
 
 public class View {
+	
+	static MementoState mementoPicked = new MementoState();
+	static MementoSaveState mementoSave = new MementoSaveState();
 	
 	enum UserType {
 		Admin, Customer;
@@ -15,7 +18,8 @@ public class View {
 	
 	public static void Start(){
 		System.out.println("Admin: (Type 1)");
-		System.out.println("Customer (Type 2)");
+		System.out.println("Customer: (Type 2)");
+		//System.out.println("Back to start: (Type 3)");
 	}
 	
 	public static void infoRecieved(){
@@ -32,10 +36,17 @@ public class View {
 		else if (userInput == 2){
 			userType = UserType.Customer;
 			Scanner read = new Scanner(System.in);
+			System.out.println("Enter 'Javier' or 'Kyla' or 'John'");
 			System.out.println("First name: ");
 			String userInput1 = read.nextLine();
 			Customer currentCustomer = CustomerController.checkCustomer(userInput1);
 			if(currentCustomer == null){
+				mementoPicked.setState(String.valueOf(userInput1));
+				mementoSave.add(mementoPicked.saveStateToMemento());
+				mementoPicked.getStateFromMemento(mementoSave.get(0));
+				System.out.println("Option picked last time: " + mementoPicked.getState());
+				System.out.println(" ");
+				infoRecieved();
 				return;
 			}
 			
@@ -47,6 +58,15 @@ public class View {
 			PathFinder.searchFlight();
 			
 			reader.close();
+		}
+//		else if (userInput == 3){
+//			System.out.println(" ");
+//			CustomerController.runAllDay();
+//		}
+		else {
+			System.out.println("Choice not possble, enter valid number");
+			System.out.println(" ");
+			CustomerController.runAllDay();
 		}
 	}
 }

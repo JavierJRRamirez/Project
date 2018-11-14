@@ -3,13 +3,15 @@ package com.csci4448.project.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.csci4448.project.model.Memento;
+
 public class MementoSaveState {
-	private static List<MementoController> listOfMemento = new ArrayList<MementoController>();
+	private List<Memento> listOfMemento = new ArrayList<Memento>();
 	
-	public static void add(MementoController flightState){
-		listOfMemento.add(flightState);
+	public void add(Memento flightState){
+		listOfMemento.add(0, flightState);
 	}
-	public MementoController get(int place){
+	public Memento get(int place){ //always int
 		return listOfMemento.get(place);
 	}
 }

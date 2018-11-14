@@ -1,0 +1,50 @@
+package com.csci4448.project.view;
+import java.io.*;
+import java.util.*;
+import com.csci4448.project.controller.FlightController;
+import com.csci4448.project.controller.MementoSaveState;
+import com.csci4448.project.controller.PathFinder;
+import com.csci4448.project.model.Flight;
+import com.csci4448.project.model.Location;
+import com.csci4448.project.model.MementoState;
+
+public class FlightView {
+	
+	static MementoState mementoPicked = new MementoState();
+	static MementoSaveState mementoSave = new MementoSaveState();
+	
+	public static void chosenFlight(List<Location> allLocation){
+		System.out.println("Choose from the available locations");
+		for(Location availableLocation : allLocation) {
+			System.out.println(availableLocation.getName() + ": " + availableLocation.getId());
+		}
+		System.out.println("Enter number assigned to the Location");
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter start and end location: Press 'Enter' after each location picked" );
+		int userInput = reader.nextInt();
+		int userInput2 = reader.nextInt();
+		for(Location availableLocation : allLocation){
+			if(userInput == availableLocation.getId() || userInput2 == availableLocation.getId()){
+				System.out.println("Selected: " + availableLocation.getName());
+			}
+		}
+		System.out.println("Are you sure you want these destinations? Yes (Type 1) No (Type 2)"); 
+		int userInput3 = reader.nextInt();
+		if(userInput3 == 1){
+			FlightController.checkFlight();
+		}
+		if(userInput3 == 2){
+			mementoPicked.setState(String.valueOf(userInput2));
+			mementoSave.add(mementoPicked.saveStateToMemento());
+			
+			mementoPicked.setState(String.valueOf(userInput));
+			mementoSave.add(mementoPicked.saveStateToMemento());
+			
+			mementoPicked.getStateFromMemento(mementoSave.get(0));
+			System.out.println("Option picked last time: " + mementoPicked.getState());
+			mementoPicked.getStateFromMemento(mementoSave.get(1));
+			System.out.println("Option picked last time: " + mementoPicked.getState());
+			PathFinder.searchFlight();
+		}
+	}
+}

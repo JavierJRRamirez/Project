@@ -1,11 +1,8 @@
 package com.csci4448.project.controller;
 import java.util.*;
 
-import com.csci4448.project.model.Customer;
 import com.csci4448.project.model.Flight;
-import com.csci4448.project.view.FlightView;
 import com.csci4448.project.view.PathFinderView;
-import com.csci4448.project.view.View;
 
 public class FlightController {
 	private static List<Flight> myFlight;

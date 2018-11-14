@@ -1,11 +1,16 @@
 package com.csci4448.project.controller;
 
-import java.util.List;
-
 import com.csci4448.project.model.Customer;
 import com.csci4448.project.model.Flight;
 
 public class AdminController {	
+	/**
+	 * Check1 if flight number selected
+	 * matches flightNumber and returns total amount 
+	 * of seats available 
+	 * @param flightNumber
+	 * @return
+	 */
 	public static int checkVacency(String flightNumber){
 		Flight currentSeats = null;
 		for(Flight check1 : FlightController.flightInfo()){
@@ -22,6 +27,10 @@ public class AdminController {
 		return 0;
 	}
 	
+	/**
+	 * @param firstName
+	 * @return
+	 */
 	public static Customer searchClient(String firstName){
 		Customer searchCustomer = null;
 		for(Customer checkCustomer : CustomerController.hardCustomer()){

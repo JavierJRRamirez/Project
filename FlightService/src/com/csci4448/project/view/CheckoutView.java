@@ -5,12 +5,12 @@ import com.csci4448.project.controller.CheckoutController;
 import com.csci4448.project.controller.CustomerController;
 import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.model.Checkout;
-import com.csci4448.project.model.Memento;
+import com.csci4448.project.model.MementoState;
 
 public class CheckoutView {
 	
-	static Memento mementoPicked = new Memento();
-	MementoSaveState mementoSave = new MementoSaveState();
+	static MementoState mementoPicked = new MementoState();
+	static MementoSaveState mementoSave = new MementoSaveState();
 	
 	enum UserType {
 		Visa, MasterCard, Paypal, ApplePay;
@@ -22,25 +22,43 @@ public class CheckoutView {
 		for(Checkout myCard : allCards){
 			System.out.println(myCard.getCard() + "                  " + myCard.getId());
 		}
-		System.out.println("Enter card Id");
+		System.out.println("Enter card Id: ");
 		int userInput = reader.nextInt();
+		boolean cardAgreed = false;
 		for(Checkout myCard : allCards){
 			if(userInput == myCard.getId()){
+				cardAgreed = true;
 				System.out.println("Selected: " + myCard.getCard());
 			}
 		}
-		
+		if(cardAgreed == false){// ask
+			System.out.println("Card not available, please enter again:");
+			CheckoutController.searchCard();
+		}
+		if(cardAgreed == true){
 		System.out.println("Agree to pay amount: Yes (Type 1) No (Type 2)");
 		int userInput2 = reader.nextInt();
 		if(userInput2 == 1){
 			System.out.println("Flight Booked!");
+			System.out.println(" ");
+			CustomerController.runAllDay();
 		}
 		
 		if(userInput2 == 2){
 			System.out.println("Flight cancelled :(");
 			System.out.println(" ");
-			MementoSaveState.add(mementoPicked.saveStateToMemento());
+			mementoPicked.setState(String.valueOf(userInput));
+			mementoSave.add(mementoPicked.saveStateToMemento());
+			mementoPicked.getStateFromMemento(mementoSave.get(0));
+			System.out.println("Option picked last time: " + mementoPicked.getState());
+			System.out.println(" ");
 			CheckoutController.searchCard();
+		}
+		else {
+			System.out.println("Choice not possble, enter valid number");
+			System.out.println(" ");
+			CheckoutController.searchCard();
+		}
 		}
 	}
 }

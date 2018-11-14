@@ -1,0 +1,12 @@
+package com.csci4448.project.controller;
+
+public class MementoController {
+	private int flightState;
+	
+	public MementoController(int flightState){
+		flightState = flightState;
+	}
+	public int getState() {
+		return flightState;
+	}
+}

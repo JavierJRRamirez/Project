@@ -8,9 +8,11 @@ import java.util.List;
 
 public class CustomerController {
 	private static List<Customer> customers;
+	private static List<Flight> custFlight;
 	
 	public static List<Customer> hardCustomer(){
 			customers = new ArrayList<Customer>();
+			custFlight = new ArrayList<Flight>();
 		
 			Customer customer1 = new Customer();
 			customer1.setFirstName("Javier");
@@ -60,6 +62,13 @@ public class CustomerController {
 	public static void runAllDay(){
 		View.infoRecieved();
 	}
+	
+//	public static Flight myCustInfo(){//List<Flight> custFlight){
+//		Flight currentFlight;
+//		for(Flight check : FlightController.){
+//			
+//		}
+//	}
 	
 	public static Customer checkCustomer(String userInput1){
 		Customer currentCustomer = null;
