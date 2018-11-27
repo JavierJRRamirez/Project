@@ -7,11 +7,22 @@ import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.model.Customer;
 import com.csci4448.project.model.MementoState;
 
+/**
+ * This class is the view for admin which calls AdminController to get information
+ * from customers that the admin can view from. Also, this class has the Memento design 
+ * pattern implemented, for when needed by the admin.
+ * @author javierramirez
+ *
+ */
 public class AdminView {
 	
 	static MementoState mementoPicked = new MementoState();
 	static MementoSaveState mementoSave = new MementoSaveState();
 	
+	/**
+	 * This method has the start options for the admin to choose from, then calling the
+	 * adminSelect method to proceed with the program.
+	 */
 	public static void adminStart(){
 		System.out.println("Check vacancy of a flight: (Type 1)");
 		System.out.println("Search for a client: (Type 2)");
@@ -19,6 +30,10 @@ public class AdminView {
 		adminSelect();
 	}
 	
+	/**
+	 * This method is to show the user of the options available after selecting
+	 * either option from the start menu of the admin.
+	 */
 	public static void adminSelect(){
 		Scanner reader = new Scanner(System.in);
 		int userInput = reader.nextInt();
@@ -28,6 +43,7 @@ public class AdminView {
 			String flightNumber = read.nextLine();
 			int currentSeats = AdminController.checkVacency(flightNumber);
 			if(currentSeats == 0){
+				adminStart();
 				return;
 			}
 			System.out.println("Vacant seat for Flight number: " + flightNumber);
@@ -46,6 +62,7 @@ public class AdminView {
 			String clientName = read.nextLine();
 			Customer searchCustomer = AdminController.searchClient(clientName);
 			if(searchCustomer == null){
+				adminStart();
 				return;
 			}
 			System.out.println("First name: " + searchCustomer.getFirstName());

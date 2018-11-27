@@ -1,6 +1,12 @@
 package com.csci4448.project.model;
 import java.util.*;
 
+/**
+ * This class creates getters and setters for all the variable used in 
+ * different classes. Also, has a random generator function that is made for the customer.
+ * @author javierramirez
+ *
+ */
 public class Customer {
 	private String firstName;
 	private String lastName;
@@ -84,26 +90,12 @@ public class Customer {
 		this.referenceNum = referenceNum;
 	}
 	
-//	private static Customer instance = null;
-//	public static Random randNum = null;
-//	
-//	private Customer(int i) {
-//		randNum = new Random(i);
-//	}
-//	
-//	public static Customer getRandomNumber(int i){
-//		if(instance == null){
-//			instance = new Customer(i);
-//		}
-//		return instance;
-//	}
-//	
-//	public static int getMainRand(){
-//		return randNum.nextInt(4) + 1;
-//	}
-	
+	/**
+	 * This is a random generator function that creates a
+	 * reference number for the customer.
+	 * @return String 
+	 */
 	public static String reservationLookup(){
-//		List<Integer> LInt = new ArrayList<>();
 		
 		String airLines = "ACFI";
 		String airNum = "0123456789";
@@ -116,10 +108,6 @@ public class Customer {
 			char c = (airLines).charAt(random.nextInt(4));
 			airAbrev+=c;
 		}
-		
-//		for(int k = 0; k < 10; k++){
-//			LInt.add(getRandomNumber(10).getMainRand());
-//		}
 		
 		int numLength = 2+random.nextInt(1);
 		for(int k = 0; k < numLength; k++){

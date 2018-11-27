@@ -1,0 +1,15 @@
+package com.csci4448.project;
+
+import com.csci4448.project.controller.CustomerController;
+import com.csci4448.project.controller.FlightController;
+
+/**
+ * This class starts and runs the program
+ * @author javierramirez
+ *
+ */
+public class Driver {
+	public static void main(String args[]) {
+		CustomerController.runAllDay();
+	}
+}

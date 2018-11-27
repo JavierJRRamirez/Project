@@ -6,13 +6,23 @@ import com.csci4448.project.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class creates customers, checks if user input matches any customer
+ * first name, and calls infoReceived from the View class when user selects 
+ * 'Customer' from the options.
+ * @author javierramirez
+ *
+ */
 public class CustomerController {
 	private static List<Customer> customers;
-	private static List<Flight> custFlight;
 	
+	/**
+	 * This class creates the customers and gives them information that is
+	 * is stored in the list customers
+	 * @return list<Customer>
+	 */
 	public static List<Customer> hardCustomer(){
 			customers = new ArrayList<Customer>();
-			custFlight = new ArrayList<Flight>();
 		
 			Customer customer1 = new Customer();
 			customer1.setFirstName("Javier");
@@ -59,17 +69,22 @@ public class CustomerController {
 			return customers;
 	}
 	
+	/**
+	 * This is used to call the the method infoRecieved in the View class
+	 */
 	public static void runAllDay(){
 		View.infoRecieved();
 	}
 	
-//	public static Flight myCustInfo(){//List<Flight> custFlight){
-//		Flight currentFlight;
-//		for(Flight check : FlightController.){
-//			
-//		}
-//	}
+
 	
+	/**
+	 * This method is used to check if the user input is equal 
+	 * to one of the customers first name in hardCustomer
+	 * @param userInput1 checks if it matches the first name 
+	 * of any customers in hardCustomer
+	 * @return Customer
+	 */
 	public static Customer checkCustomer(String userInput1){
 		Customer currentCustomer = null;
 		for(Customer check1 : CustomerController.hardCustomer()){

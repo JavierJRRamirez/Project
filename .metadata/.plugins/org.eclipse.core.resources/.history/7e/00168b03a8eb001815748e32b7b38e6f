@@ -1,0 +1,12 @@
+package com.csci4448.project.model;
+
+public class Memento {
+	private String flightState;
+	
+	public Memento(String flightState){
+		this.flightState = flightState;
+	}
+	public String getState() {
+		return flightState;
+	}
+}

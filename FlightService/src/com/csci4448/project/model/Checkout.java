@@ -1,9 +1,19 @@
 package com.csci4448.project.model;
 
+/**
+ * This class creates getters and setters for card and id
+ * and has a helper function to associate each card with an id. 
+ * @author javierramirez
+ *
+ */
 public class Checkout {
-	String card;
-	int id;
+	public String card;
+	public int id;
 	
+	/**
+	 * @param card	The first parameter is the name of the card.
+	 * @param id	The second parameter is the id associated with the card.
+	 */
 	public Checkout(String card, int id){
 		super();
 		this.card = card;

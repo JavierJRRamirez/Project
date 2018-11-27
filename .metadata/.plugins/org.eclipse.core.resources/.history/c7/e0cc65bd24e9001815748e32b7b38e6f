@@ -1,0 +1,28 @@
+package com.csci4448.project.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import com.csci4448.project.model.Checkout;
+import com.csci4448.project.view.CheckoutView;
+
+public class CheckoutController {
+	private static List<Checkout> myCard;
+	
+	public static List<Checkout> chooseCard(){
+		return myCard;
+	}
+	static {
+		myCard = new ArrayList<Checkout>();
+		
+		myCard.add(new Checkout("Visa", 1));
+		myCard.add(new Checkout("Master Card", 2));
+		myCard.add(new Checkout("PayPal", 3));
+		myCard.add(new Checkout("Apple Pay", 4));
+	}
+	
+	public static void searchCard(){
+		CheckoutView.checkoutCust(myCard);
+	}
+	
+
+}

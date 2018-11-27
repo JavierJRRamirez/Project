@@ -1,0 +1,17 @@
+package com.csci4448.project.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.csci4448.project.model.Memento;
+
+public class MementoSaveState {
+	private List<Memento> listOfMemento = new ArrayList<Memento>();
+	
+	public void add(Memento flightState){
+		listOfMemento.add(0, flightState);
+	}
+	public Memento get(int place){ //always int
+		return listOfMemento.get(place);
+	}
+}

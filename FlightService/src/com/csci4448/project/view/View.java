@@ -7,6 +7,15 @@ import com.csci4448.project.model.MementoState;
 
 import java.util.*;
 
+/**
+ * This class contains the main options for the customer to display the customer information
+ * if the customer is in the system and after proceeding into the searchFlight in the PathFinder
+ * class which goes in FlightView. The option for when selecting the Admin or customer is also available
+ * so they go into the appropriate method. This class also implements the Memento design 
+ * pattern when the customer enter an unknown user by displaying what they entered previously.
+ * @author javierramirez
+ *
+ */
 public class View {
 	
 	static MementoState mementoPicked = new MementoState();
@@ -16,12 +25,20 @@ public class View {
 		Admin, Customer;
 	}
 	
+	/**
+	 * This method is printing out the option for the user to choose between the 
+	 * Admin or Customer.
+	 */
 	public static void Start(){
 		System.out.println("Admin: (Type 1)");
 		System.out.println("Customer: (Type 2)");
-		//System.out.println("Back to start: (Type 3)");
 	}
 	
+	/**
+	 * This method contains the main options for the customer and displays the
+	 * information for the customer using the CustomerController class. This method also 
+	 * contains the option to choose the admin and go into the AdminView class.
+	 */
 	public static void infoRecieved(){
 		UserType userType;
 		Scanner reader = new Scanner(System.in);
@@ -59,10 +76,6 @@ public class View {
 			
 			reader.close();
 		}
-//		else if (userInput == 3){
-//			System.out.println(" ");
-//			CustomerController.runAllDay();
-//		}
 		else {
 			System.out.println("Choice not possble, enter valid number");
 			System.out.println(" ");

@@ -9,11 +9,22 @@ import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.model.Flight;
 import com.csci4448.project.model.MementoState;
 
+/**
+ * This class contains the option for the customer to choose a flight on a specific date
+ * then proceed to searchCard in the CheckoutController class which calls the CheckoutView class.
+ * @author javierramirez
+ *
+ */
 public class PathFinderView {
 	
 	static MementoState mementoPicked = new MementoState();
 	static MementoSaveState mementoSave = new MementoSaveState();
 	
+	/**
+	 * This method allows the customer to choose a day for departure and select a flight with
+	 * different flight information.
+	 * @param allFlights The variable is used to iterate through the myFlight array.
+	 */
 	public static void dayOfFlight(List<Flight> allFlights){
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Input date for flight: (such as 01/12/19 month/day/year)");

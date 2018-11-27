@@ -7,11 +7,25 @@ import com.csci4448.project.controller.PathFinder;
 import com.csci4448.project.model.Location;
 import com.csci4448.project.model.MementoState;
 
+/**
+ * This class iterates through the list of available locations in the PathFinder class in which 
+ * the customer would then choose a starting location and end location. The Memento design
+ * pattern is also implemented to let the user select different locations and display what
+ * they previously chose.
+ * @author javierramirez
+ *
+ */
 public class FlightView {
 	
 	static MementoState mementoPicked = new MementoState();
 	static MementoSaveState mementoSave = new MementoSaveState();
 	
+	/**
+	 * This method displays the available options the customer can choose from as a
+	 * start destination and an end destination. Then proceeding to the FlightController 
+	 * which calls checkFlight method and proceed into PathFinderView.
+	 * @param allLocation	This variable is used to iterate through the availableLocation array.
+	 */
 	public static void chosenFlight(List<Location> allLocation){
 		System.out.println("Choose from the available locations");
 		for(Location availableLocation : allLocation) {

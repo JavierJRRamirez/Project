@@ -7,6 +7,13 @@ import com.csci4448.project.controller.MementoSaveState;
 import com.csci4448.project.model.Checkout;
 import com.csci4448.project.model.MementoState;
 
+/**
+ * This class contains the option for the customer to choose what card they want to pay with 
+ * and checking out the flight they have chosen. Then are taken back to the start menu and
+ * the Memento design pattern is also implemented for the to choose a different card to pay with.
+ * @author javierramirez
+ *
+ */
 public class CheckoutView {
 	
 	static MementoState mementoPicked = new MementoState();
@@ -15,6 +22,11 @@ public class CheckoutView {
 	enum UserType {
 		Visa, MasterCard, Paypal, ApplePay;
 	}
+	/**
+	 * This method displays the card information and allows the user to choose from the
+	 * following cards and get checkout their flight they have chosen.
+	 * @param allCards	This variable is used to iterate through the myCard array
+	 */
 	public static void checkoutCust(List<Checkout> allCards){
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Select payment method: ");
@@ -31,7 +43,7 @@ public class CheckoutView {
 				System.out.println("Selected: " + myCard.getCard());
 			}
 		}
-		if(cardAgreed == false){// ask
+		if(cardAgreed == false){
 			System.out.println("Card not available, please enter again:");
 			CheckoutController.searchCard();
 		}

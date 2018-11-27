@@ -1,5 +1,11 @@
 package com.csci4448.project.model;
 
+/**
+ * This class creates getter and setter for the variables in Flight and has a helper function
+ * Flight that holds information for a flight that is used in the FlightController class.
+ * @author javierramirez
+ *
+ */
 public class Flight {
 	public  String date;
 	public String startTime;
@@ -9,10 +15,22 @@ public class Flight {
 	public int seatsAvailable;
 	public int seatsTaken;
 	private double cost;
-	String info;
-	int id;
+	public String info;
+	public int id;
 	
 	
+	/**
+	 * This is a helper function that create appropriate variables for flights and 
+	 * give each an id so the user can choose from the available flights in the FlightController class.
+	 * @param startTime	Is the start time for a flight.
+	 * @param endTime	Is the end time for a flight.
+	 * @param duration	Anticipated time the flight will takes off and arrive to the destination.
+	 * @param seatsAvailable	The amount of seats available on a flight.
+	 * @param seatsTaken	The seats that are taken on a particular flight.
+	 * @param flightNum	The flight number for a flight.
+	 * @param cost	The cost for a flight.
+	 * @param id	The id associated with a flight so the user can choose a flight with the assigned information.
+	 */
 	public Flight(String startTime, String endTime, int duration, int seatsAvailable, int seatsTaken, String flightNum, double cost, int id) {
 		super();
 		this.startTime = startTime;
@@ -79,12 +97,5 @@ public class Flight {
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
-	
-//	static {
-//		Flight flight = new Flight();
-//		flights.add(flight);
-//		System.out.println("242");
-//	}
-	
 
 }

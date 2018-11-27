@@ -3,13 +3,19 @@ package com.csci4448.project.controller;
 import com.csci4448.project.model.Customer;
 import com.csci4448.project.model.Flight;
 
+/**
+ *AdminController gets information from the FlightController and 
+ *CustomerController and uses this information in the AdminView to display.
+ * @author javierramirez
+ *
+ */
 public class AdminController {	
 	/**
-	 * Check1 if flight number selected
+	 * Check1 checks if flight number selected
 	 * matches flightNumber and returns total amount 
-	 * of seats available 
-	 * @param flightNumber
-	 * @return
+	 * of seats available.
+	 * @param	flightNumber is the flight number for individual flights.
+	 * @return	int
 	 */
 	public static int checkVacency(String flightNumber){
 		Flight currentSeats = null;
@@ -28,8 +34,10 @@ public class AdminController {
 	}
 	
 	/**
-	 * @param firstName
-	 * @return
+	 * checkCustomer checks if the first name matches
+	 * the first name of a customer in CustomerController.
+	 * @param	firstName Checks firstName of the customers in CustomerController.
+	 * @return	Customer
 	 */
 	public static Customer searchClient(String firstName){
 		Customer searchCustomer = null;

@@ -1,5 +1,10 @@
 package com.csci4448.project.model;
 
+/**
+ * MementoState uses Memento by creating and storing the states in Memento objects.
+ * @author javierramirez
+ *
+ */
 public class MementoState {
 	private String flightState;
 	
